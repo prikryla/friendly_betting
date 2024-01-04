@@ -4,7 +4,7 @@ from rest_framework import status
 from .models import User
 from .serializers import UserSerializer
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views import View
 from django.http import JsonResponse
 
@@ -16,7 +16,6 @@ class UserRegisterView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        # Use create_user to ensure the password is hashed
         user = User.objects.create_user(
             username=serializer.validated_data['username'],
             email=serializer.validated_data['email'],
@@ -40,7 +39,12 @@ class LoginView(View):
         
         if user is not None:
             login(request, user)
-            return JsonResponse({'message': 'Login successful', 'token': 'your_token'})
+            return render(request, 'login.html')
         else:
             message = 'Invalid login credentials'
             return JsonResponse({'message': message}, status=400)
+
+def log_out(request):
+    logout(request)
+    return render(request, 'login.html')
+    
