@@ -18,13 +18,17 @@ class Game(models.Model):
     def default_score():
         return {'goals1': None, 'goals2': None, 'status': Game.ScoreStatus.SCHEDULED}
 
+    def __str__(self):
+        return f"[{self.group}] {self.team1short}-{self.team2short}"
+
     id = models.CharField(max_length=255, primary_key=True)
     group = models.CharField(max_length=255)
-    po_type = models.CharField(max_length=4, choices=PlayoffType.choices)
+    po_type = models.CharField(max_length=4, choices=PlayoffType.choices, null=True, blank=True)
     team1short = models.CharField(max_length=255)
     team2short = models.CharField(max_length=255)
     date = models.DateTimeField()
     score = models.JSONField(default=default_score)
+
 
 class Bet(models.Model):
     class TeamStatus(models.TextChoices):
@@ -46,3 +50,6 @@ class Bet(models.Model):
     team1status = models.CharField(max_length=8, choices=TeamStatus.choices, default=TeamStatus.REGULAR)
     team2status = models.CharField(max_length=8, choices=TeamStatus.choices, default=TeamStatus.REGULAR)
     bet_status = models.CharField(max_length=6, choices=BetStatus.choices, default=BetStatus.PLACED)
+
+    def __str__(self):
+        return f"[{self.user}] {self.game.team1short}-{self.game.team2short}"
