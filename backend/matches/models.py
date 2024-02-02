@@ -3,7 +3,7 @@ from authentication.models import User
 
 class Game(models.Model):
     class PlayoffType(models.TextChoices):
-        NULL = 'NULL', 'No Play Off (Regular Game)'
+        NULL = 'null', 'No Play Off (Regular Game)'
         Q = 'Q', 'Qualification Round'
         QF = 'QF', 'Quarterfinals'
         SF = 'SF', 'Semifinals'
@@ -20,7 +20,7 @@ class Game(models.Model):
 
     id = models.CharField(max_length=255, primary_key=True)
     group = models.CharField(max_length=255)
-    po_type = models.CharField(max_length=4, choices=PlayoffType.choices, default=PlayoffType.NULL)
+    po_type = models.CharField(max_length=4, choices=PlayoffType.choices)
     team1short = models.CharField(max_length=255)
     team2short = models.CharField(max_length=255)
     date = models.DateTimeField()
