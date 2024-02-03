@@ -26,7 +26,8 @@ class Game(models.Model):
     po_type = models.CharField(max_length=4, choices=PlayoffType.choices, null=True, blank=True)
     team1short = models.CharField(max_length=255)
     team2short = models.CharField(max_length=255)
-    date = models.DateTimeField()
+    date = models.DateField()
+    time = models.TimeField(default='00:00:00')
     score = models.JSONField(default=default_score)
 
 

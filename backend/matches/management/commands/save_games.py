@@ -33,7 +33,11 @@ class Command(BaseCommand):
             score = api_game.get("score")
 
             # Parse the date string into a DateTime object
-            date = timezone.datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+            date_time = timezone.datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+
+            # Split DateTime into date and time
+            date = date_time.date()
+            time = date_time.time()
 
             # Try to get the existing Game instance by ID
             game_instance, created = Game.objects.get_or_create(
@@ -44,6 +48,7 @@ class Command(BaseCommand):
                     "team1short": team1short,
                     "team2short": team2short,
                     "date": date,
+                    "time": time,
                     "score": json.dumps(score),  # Store score as JSON string
                 }
             )
@@ -55,7 +60,9 @@ class Command(BaseCommand):
                 game_instance.team1short = team1short
                 game_instance.team2short = team2short
                 game_instance.date = date
+                game_instance.time = time
                 game_instance.score = json.dumps(score)  # Store score as JSON string
                 game_instance.save()
+
 
         self.stdout.write(self.style.SUCCESS('Successfully updated games'))
