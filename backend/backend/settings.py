@@ -133,3 +133,5 @@ AUTHENTICATION_BACKENDS = [
     # Add other backends if needed
 ]
 AUTH_USER_MODEL = 'authentication.User'
+
+HOCKEY_API_KEY = os.environ.get('HOCKEY_API_KEY')

@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.utils import timezone
+from django.conf import settings
 from matches.models import Game
 import requests
 import json
@@ -9,7 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         url = "https://hockey-live-sk-data.p.rapidapi.com/games/WCH/2024"
-        querystring = {"key": "a96b78d76c7bf5ad2697df0335f3ccfd"}
+        querystring = {"key": settings.HOCKEY_API_KEY}
         headers = {
             "X-RapidAPI-Key": "0f730babd8mshe3b9d2000fd2680p18bb7fjsna23fe5abe761",
             "X-RapidAPI-Host": "hockey-live-sk-data.p.rapidapi.com"
