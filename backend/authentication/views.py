@@ -45,6 +45,10 @@ class LoginView(View):
             return JsonResponse({'message': message}, status=400)
 
 def log_out(request):
+    if not request.user.is_authenticated:
+        # If user is not authenticated, return a JsonResponse with a message indicating they are already logged out
+        return JsonResponse({'message': 'User is already logged out'}, status=400)
+
     logout(request)
-    return render(request, 'login.html')
-    
+    message = 'User successfully logged out'
+    return JsonResponse({'message': message}, status=200)
