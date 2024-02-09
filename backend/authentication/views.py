@@ -1,50 +1,44 @@
-from rest_framework import generics
-from rest_framework.response import Response
-from rest_framework import status
-from .models import User
-from .serializers import UserSerializer
-from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.views import View
 from django.http import JsonResponse
+from rest_framework.decorators import api_view
 
-class UserRegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
+# ---------------------------------
+# TODO: Finish this register method 
+# ---------------------------------
+# class register_user(generics.CreateAPIView):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
 
-        user = User.objects.create_user(
-            username=serializer.validated_data['username'],
-            email=serializer.validated_data['email'],
-            password=serializer.validated_data['password'],
-        )
+#     def create(self, request, *args, **kwargs):
+#         serializer = self.get_serializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
 
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+#         user = User.objects.create_user(
+#             username=serializer.validated_data['username'],
+#             email=serializer.validated_data['email'],
+#             password=serializer.validated_data['password'],
+#         )
 
-class LoginView(View):
-    template_name = 'login.html'
+#         headers = self.get_success_headers(serializer.data)
+#         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+  
+@api_view(['POST'])
+def user_login(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
 
-    def get(self, request):
-        return render(request, self.template_name)
-
-    def post(self, request):
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            login(request, user)
-            message = f"User {username} is logged"
-            return JsonResponse({'message': message}, status=200)
-        else:
-            message = 'Invalid login credentials'
-            return JsonResponse({'message': message}, status=400)
-
+    user = authenticate(request, username=username, password=password)
+    
+    if user is not None:
+        login(request, user)  # Renamed to avoid conflict
+        message = f"User {username} is logged"
+        return JsonResponse({'message': message}, status=200)
+    else:
+        message = 'Invalid login credentials'
+        return JsonResponse({'message': message}, status=400)
+    
+@api_view(['POST'])
 def log_out(request):
     if not request.user.is_authenticated:
         return JsonResponse({'message': 'User is already logged out'}, status=400)
