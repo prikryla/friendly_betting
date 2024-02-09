@@ -39,7 +39,8 @@ class LoginView(View):
         
         if user is not None:
             login(request, user)
-            return render(request, 'login.html')
+            message = f"User {username} is logged"
+            return JsonResponse({'message': message}, status=200)
         else:
             message = 'Invalid login credentials'
             return JsonResponse({'message': message}, status=400)
