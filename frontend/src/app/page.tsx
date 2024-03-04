@@ -11,11 +11,10 @@ export default function Home() {
         alt="Image of Soccer Stadion with Ball"
         width={1004}
         height={1117}
-        className="w-1/2 opacity-90"
+        className="w-3/6 opacity-90"
       />
-      <div className="w-1/2 flex-row items-center justify-center border">
+      <div className="w-3/6 border-4 h-screen flex flex-col items-center">
         <Logo />
-        <p>Vitejte v nové aplikaci</p>
       </div>
     </main>
   );
