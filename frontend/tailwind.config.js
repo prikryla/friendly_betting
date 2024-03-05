@@ -10,6 +10,11 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'line': '#666666'
+    }
   },
   plugins: [],
 }
