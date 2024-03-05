@@ -2,7 +2,7 @@ from django.db import models
 from authentication.models import User
 import requests
 
-def get_unique_team_names():
+def get_all_teams():
         url = "https://hockey-live-sk-data.p.rapidapi.com/games/WCH/2024"
         querystring = {"key": "a96b78d76c7bf5ad2697df0335f3ccfd"}
         headers = {
@@ -26,17 +26,14 @@ def get_unique_team_names():
 
 class BestOf(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    unique_team1long_values = get_unique_team_names()  # Call the function to get unique team names
     
+    unique_team1long_values = get_all_teams()
     TOURNAMENT_WINNER_CHOICES = [(value, value) for value in unique_team1long_values]
 
     tournament_winner = models.CharField(max_length=100, choices=TOURNAMENT_WINNER_CHOICES)
-    
     best_scorer = models.CharField(max_length=100)
     best_points = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.user.username}'s BestOf"
-    
-
     
