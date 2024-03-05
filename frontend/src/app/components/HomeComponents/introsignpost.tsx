@@ -3,7 +3,7 @@ import Button from "../button";
 
 const IntroSignPost = () => {
   return (
-    <div className="flex flex-col border w-4/5 items-center gap-12">
+    <div className="flex flex-col w-4/5 items-center gap-12">
       <div className="flex flex-col gap-5">
         <Image src="/Logo.png" alt="Logo of app" width={48} height={48} />
         <h1 className="text-5xl font-semibold">Tipuj s námi</h1>
