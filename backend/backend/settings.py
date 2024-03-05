@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'authentication',
     'rest_framework',
     'matches',
+    'best_of',
 ]
 
 MIDDLEWARE = [
