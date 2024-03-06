@@ -7,7 +7,7 @@ interface IButtonProps {
 
 const Button: React.FC<IButtonProps> = ({ text, href }) => {
   return (
-    <button className="border pl-10 pr-10 pt-5 pb-5 rounded-full w-96 text-2xl font-semibold">
+    <button className="w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line">
       <Link href={`/${href}`}>{text}</Link>
     </button>
   );
