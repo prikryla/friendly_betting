@@ -9,17 +9,17 @@ export default function Home() {
    * TODO Image responsive, need to define different size image for different size of screen, via. Notion - chapter 3
    */
   return (
-    <main className="flex flex-grow h-full">
-      <div className="opacity-90 w-1/2 h-full hidden">
+    <main className="flex justify-center">
+      <div className="opacity-90 w-1/2 hidden sm:hidden md:block max-h-100">
         <Image
           src="/landingimage.png"
           alt="Image of Soccer Stadion with Ball"
-          width={960}
-          height={0}
+          width={1000}
+          height={1000}
         />
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center gap-20">
+      <div className="w-full sm:w-1/2 flex flex-col justify-center items-center gap-20 max-h-100">
         <Logo />
         <IntroSignPost />
       </div>
