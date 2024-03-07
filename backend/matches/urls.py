@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import ListGames
+from . import views
 
 urlpatterns = [
-    path('list', ListGames.as_view(), name='game-list'),
+    path('list', views.get_all_games, name='game-list'),
+    path('create_bet', views.create_bet, name='create-bet')
 ]
