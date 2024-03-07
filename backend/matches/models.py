@@ -19,7 +19,7 @@ class Game(models.Model):
         return {'goals1': None, 'goals2': None, 'status': Game.ScoreStatus.SCHEDULED}
 
     def __str__(self):
-        return f"[{self.group}] {self.team1short}-{self.team2short}"
+        return f"{self.id} [{self.group}] {self.team1short}-{self.team2short}"
 
     id = models.CharField(max_length=255, primary_key=True)
     group = models.CharField(max_length=255)
