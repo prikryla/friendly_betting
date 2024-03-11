@@ -11,7 +11,7 @@ const LandingImage: React.FC = () => {
       alt="Image of Soccer Stadion with Ball"
       width={1000}
       height={600}
-      className="h-full w-full object-cover"
+      className="opacity-90 h-full w-full object-cover"
     />
   );
 };

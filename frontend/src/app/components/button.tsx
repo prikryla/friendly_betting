@@ -2,7 +2,7 @@ import Link from "next/link";
 
 interface IButtonProps {
   text: string;
-  href: string;
+  href?: string;
 }
 
 const Button: React.FC<IButtonProps> = ({ text, href }) => {
