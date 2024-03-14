@@ -1,0 +1,4 @@
+django==3.*
+djangorestframework==3.12.*
+python-dotenv==0.19.*
+requests==2.28.*
