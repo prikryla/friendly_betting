@@ -18,7 +18,7 @@ const LoginForm: React.FC = () => {
     setLoginData({ ...loginData, [name]: value });
   };
 
-  const handleSubmit = (): void => {
+  const handleSubmit = (event: React.FormEvent): void => {
     event?.preventDefault();
     if (loginData.password.length < 8) {
       setShowShortPassword(true);
@@ -41,7 +41,7 @@ const LoginForm: React.FC = () => {
             value={loginData.email}
             type="email"
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
+            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
         </label>
         <label
@@ -54,7 +54,7 @@ const LoginForm: React.FC = () => {
             value={loginData.password}
             type="password"
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
+            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
           {showShortPassword && (
             <p style={{ color: "red" }}>Heslo je příliš krátké</p>
