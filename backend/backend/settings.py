@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'matches',
     'best_of',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
