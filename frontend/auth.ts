@@ -8,7 +8,7 @@ import axios from 'axios';
 async function loginUser(email: string, password: string) {  
     console.log("loginUser metoda")
     try {
-        const response = await axios.post('127.0.0.1:8000/api/auth/login', {email, password});
+        const response = await axios.post('http://127.0.0.1:8000/api/auth/login/', {email, password});
         return response.data;
     } catch (error) {
         console.log(error)
