@@ -1,12 +1,15 @@
 "use client";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
-
+import { useFormState, useFormStatus } from "react-dom";
+import { authenticate } from "@/app/lib/action";
 interface ILoginData {
   email: string;
   password: string;
 }
 
 const LoginForm: React.FC = () => {
+  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   const [showShortPassword, setShowShortPassword] = useState<boolean>(false);
   const [loginData, setLoginData] = useState<ILoginData>({
     email: "",
@@ -20,17 +23,17 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent): void => {
     event?.preventDefault();
-    if (loginData.password.length < 8) {
+    /*  if (loginData.password.length < 8) {
       setShowShortPassword(true);
     } else {
       console.log(loginData);
-    }
+    } */
   };
 
   return (
     <div className="flex flex-col gap-10">
       <h1 className="text-2xl font-medium">Přihlásit se</h1>
-      <form className="flex flex-col gap-16" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-16" action={dispatch}>
         <label
           htmlFor={loginData.email}
           className="flex flex-col gap-2 text-line"
