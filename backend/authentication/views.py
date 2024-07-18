@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
-
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.middleware.csrf import get_token
 
 # ---------------------------------
 # TODO: Finish this register method 
@@ -46,3 +47,9 @@ def log_out(request):
     logout(request)
     message = 'User successfully logged out'
     return JsonResponse({'message': message}, status=200)
+
+@ensure_csrf_cookie
+def get_csrf_token(request):
+    csrf_token = get_token(request)
+    return JsonResponse({'csrfToken': csrf_token})
+
