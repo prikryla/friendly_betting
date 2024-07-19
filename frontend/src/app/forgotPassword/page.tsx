@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 const ForgotPasswordPage = () => {
   return (
-    <main className="flex justify-center">
+    <main className="flex justify-center items-center">
       <div className="w-1/2 hidden sm:hidden md:block h-screen">
         <LandingImage />
       </div>

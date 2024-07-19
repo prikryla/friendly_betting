@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { authenticate } from "@/app/lib/action";
 interface ILoginData {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -12,7 +12,7 @@ const LoginForm: React.FC = () => {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   const [showShortPassword, setShowShortPassword] = useState<boolean>(false);
   const [loginData, setLoginData] = useState<ILoginData>({
-    email: "",
+    username: "",
     password: "",
   });
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -23,6 +23,7 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent): void => {
     event?.preventDefault();
+    
     /*  if (loginData.password.length < 8) {
       setShowShortPassword(true);
     } else {
@@ -35,14 +36,14 @@ const LoginForm: React.FC = () => {
       <h1 className="text-2xl font-medium">Přihlásit se</h1>
       <form className="flex flex-col gap-16" action={dispatch}>
         <label
-          htmlFor={loginData.email}
+          htmlFor={loginData.username}
           className="flex flex-col gap-2 text-line"
         >
-          E-mail
+          Uživatelské jméno
           <input
-            name="email"
-            value={loginData.email}
-            type="email"
+            name="username"
+            value={loginData.username}
+            type="text"
             onChange={handleChange}
             className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
