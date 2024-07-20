@@ -3,6 +3,7 @@ import Logo from "../components/HomeComponents/Logo/logo";
 import LandingImage from "../components/landingimage";
 import LoginForm from "../components/LoginComponents/LoginForm/loginForm";
 
+
 export const metadata: Metadata = {
   title: "Login | Friendly Betting",
 };
