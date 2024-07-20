@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Logo from "../components/HomeComponents/Logo/logo";
-import LoginForm from "../components/LoginComponents/LoginForm/loginForm";
 import LandingImage from "../components/landingimage";
 import RegisterForm from "../components/RegisterComponents/registerform";
 

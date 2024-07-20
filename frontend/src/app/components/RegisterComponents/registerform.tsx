@@ -22,7 +22,7 @@ const RegisterForm: React.FC = () => {
     setRegisterData({ ...registerData, [name]: value });
   };
 
-  const handleSubmit = (event: React.FormEvent ): void => {
+  const handleSubmit = (event: React.FormEvent): void => {
     event?.preventDefault();
     if (registerData.password.length < 8) {
       setBadPassword(true);
@@ -86,7 +86,7 @@ const RegisterForm: React.FC = () => {
           htmlFor={registerData.password}
           className="flex flex-col gap-2 text-line"
         >
-          Heslo
+          Heslo znovu
           <input
             name="passwordAgain"
             value={registerData.passwordAgain}

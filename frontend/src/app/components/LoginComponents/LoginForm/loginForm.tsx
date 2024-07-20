@@ -1,47 +1,68 @@
 "use client";
-import { useState } from "react";
-
+import { signIn } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
+import { authenticate } from "@/app/lib/action";
+import axios from "axios";
 interface ILoginData {
-  email: string;
+  username: string;
   password: string;
+  csrfToken: string;
 }
 
 const LoginForm: React.FC = () => {
+  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   const [showShortPassword, setShowShortPassword] = useState<boolean>(false);
   const [loginData, setLoginData] = useState<ILoginData>({
-    email: "",
+    username: "",
     password: "",
+    csrfToken: "",
   });
+
+
+
+  useEffect(() => {
+    const getCsrfToken = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/api/auth/csrf-token/');
+        console.log(response);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getCsrfToken()
+  }, [])
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setShowShortPassword(false);
     const { name, value } = event.target;
     setLoginData({ ...loginData, [name]: value });
   };
 
-  const handleSubmit = (): void => {
+  const handleSubmit = (event: React.FormEvent): void => {
     event?.preventDefault();
-    if (loginData.password.length < 8) {
+    
+    /*  if (loginData.password.length < 8) {
       setShowShortPassword(true);
     } else {
       console.log(loginData);
-    }
+    } */
   };
 
   return (
     <div className="flex flex-col gap-10">
       <h1 className="text-2xl font-medium">Přihlásit se</h1>
-      <form className="flex flex-col gap-16" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-16" action={dispatch}>
         <label
-          htmlFor={loginData.email}
+          htmlFor={loginData.username}
           className="flex flex-col gap-2 text-line"
         >
-          E-mail
+          Uživatelské jméno
           <input
-            name="email"
-            value={loginData.email}
-            type="email"
+            name="username"
+            value={loginData.username}
+            type="text"
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
+            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
         </label>
         <label
@@ -54,7 +75,7 @@ const LoginForm: React.FC = () => {
             value={loginData.password}
             type="password"
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
+            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
           {showShortPassword && (
             <p style={{ color: "red" }}>Heslo je příliš krátké</p>

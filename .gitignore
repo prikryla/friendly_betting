@@ -26,6 +26,6 @@ __pycache__
 .DS_Store
 /backend/myproject/__pycache__
 /backend/backend/.env
-/frontend/myapp/node_modules
+/frontend/node_modules
 /frontend/myapp/build
-/frontend/myapp/.env
+/frontend/.env

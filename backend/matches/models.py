@@ -46,11 +46,14 @@ class Bet(models.Model):
 
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    team1bet = models.PositiveIntegerField()
-    team2bet = models.PositiveIntegerField()
-    team1status = models.CharField(max_length=8, choices=TeamStatus.choices, default=TeamStatus.REGULAR)
-    team2status = models.CharField(max_length=8, choices=TeamStatus.choices, default=TeamStatus.REGULAR)
+    team1_bet = models.PositiveIntegerField()
+    team2_bet = models.PositiveIntegerField()
+    team1_status = models.CharField(max_length=8, choices=TeamStatus.choices, default=TeamStatus.REGULAR)
+    team2_status = models.CharField(max_length=8, choices=TeamStatus.choices, default=TeamStatus.REGULAR)
     bet_status = models.CharField(max_length=6, choices=BetStatus.choices, default=BetStatus.PLACED)
+    bet_points = models.IntegerField(default=0)
+    team1_result = models.IntegerField(default=0)
+    team2_result = models.IntegerField(default=0)
 
     def __str__(self):
         return f"[{self.user}] {self.game.team1short}-{self.game.team2short}"
