@@ -2,7 +2,7 @@ import type { NextAuthConfig } from "next-auth";
 
 export const authConfig = {
     pages: {
-        signIn: '/login'
+        signIn: '/login',
     },
     callbacks: {
         authorized({ auth, request: { nextUrl } }) {
@@ -18,4 +18,5 @@ export const authConfig = {
         },
       },
       providers: [], 
+      secret: process.env.AUTH_TOKEN,
     } satisfies NextAuthConfig;

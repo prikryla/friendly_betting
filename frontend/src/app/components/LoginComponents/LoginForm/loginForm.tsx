@@ -1,6 +1,6 @@
 "use client";
 import { signIn } from "next-auth/react";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { authenticate } from "@/app/lib/action";
 import axios from "axios";
@@ -18,20 +18,7 @@ const LoginForm: React.FC = () => {
     password: "",
     csrfToken: "",
   });
-
-
-
-  useEffect(() => {
-    const getCsrfToken = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/api/auth/csrf-token/');
-        console.log(response);
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getCsrfToken()
-  }, [])
+  
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setShowShortPassword(false);
     const { name, value } = event.target;
@@ -40,8 +27,7 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent): void => {
     event?.preventDefault();
-    
-    /*  if (loginData.password.length < 8) {
+/*     if (loginData.password.length < 8) {
       setShowShortPassword(true);
     } else {
       console.log(loginData);

@@ -26,8 +26,8 @@ from django.middleware.csrf import get_token
   
 @api_view(['POST'])
 def user_login(request):
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+    username = request.data.get('username')
+    password = request.data.get('password')
 
     user = authenticate(request, username=username, password=password)
     
