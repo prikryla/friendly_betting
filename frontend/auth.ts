@@ -14,16 +14,14 @@ const getCsrfToken = async () => {
   };
 
 async function loginUser(username: string, password: string) {  
-    console.log('login user methoda')
     try {
         const csrfToken = await getCsrfToken()
         const headers = {
             'X-CRSFToken': csrfToken, 
             'Content-Type': 'application/json',
         }
-        console.log('csrfToken kemo: ', csrfToken);
         const response = await axios.post('http://127.0.0.1:8000/api/auth/login/', {'username' :username, 'password': password}, { headers: headers });
-        console.log('login user metoda response čéče: ', response);
+        console.log('login user metoda response čéče: ', response.data);
         return response.data;
     } catch (error) {
         console.log(error)
@@ -37,21 +35,18 @@ export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [Credentials({
     async authorize(credentials) {
-        console.log('authorize method')
         const parsedCredentials = z
             .object({ username: z.string(), password: z.string()})
             .safeParse(credentials)
     
 
         if (parsedCredentials.success) {
-            console.log('parsedCredentilas suzccess')
             const { username, password } = parsedCredentials.data;
             const user = await loginUser(username, password)
             if (!user) return null
-            console.log('returnuji usera')
+            console.log('usrik kamo: ', user);
             if (user) return user
         }
-        console.log('returnuji null')
         return null
         
     }

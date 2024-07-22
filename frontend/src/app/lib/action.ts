@@ -8,7 +8,6 @@ export async function authenticate(
 ) {
   try {
     await signIn('credentials', formData);
-    console.log('authenticate method')
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
