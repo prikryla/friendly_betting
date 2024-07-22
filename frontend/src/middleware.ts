@@ -11,10 +11,7 @@ export default auth((req) => {
     const isLoggedIn = !!req.auth;
     const isApiAuthRoute = nextUrl.pathname.startsWith('/login') || nextUrl.pathname === '/' || nextUrl.pathname === '/register';
     const isPublicRoute = nextUrl.pathname === '/';
-    
-    console.log(nextUrl.pathname);
-    
-    // Kontrola pro všechny cesty, které začínají /dashboard
+        
     const isAuthRoute = authRoutes.some(route => nextUrl.pathname.startsWith(route));
     
     if (isApiAuthRoute) {
