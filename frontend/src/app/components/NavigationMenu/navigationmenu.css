@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-container {
+    @apply hidden 
+        justify-end 
+        w-3/5
+        sm:flex sm:gap-2 sm:w-full
+        md:gap-4 md:w-full md:mr-3
+        lg:gap-2 lg:m-9
+        xl:gap-10 xl:m-20
+}
+
+.logo-container {
+    @apply 
+        w-1/5
+        sm:w-20
+        md:w-20
+}
+
+.logout-button {
+    @apply 
+        text-xs 
+        md:text-base
+        lg:text-lg
+        xl:text-lg 
+        hover:border-b 
+        md:px-1
+        px-2
+        cursor-pointer;
+}
