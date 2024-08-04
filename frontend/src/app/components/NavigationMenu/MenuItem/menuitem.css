@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-item {
+    @apply 
+        text-xs 
+        md:text-base
+        lg:text-base
+        xl:text-lg 
+        2xl:text-xl
+        hover:border-b 
+        md:px-1
+        lg:px-1
+        px-2
+        cursor-pointer;
+}

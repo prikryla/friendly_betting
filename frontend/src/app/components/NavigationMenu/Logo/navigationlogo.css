@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo-container {
+    @apply 
+        flex
+        items-center
+        gap-2.5
+        lg:text-lg
+        xl:text-2xl
+        xl:font-bold
+        2xl:text-4xl
+}
+.logo-text {
+    @apply
+        sm:hidden 
+        lg:block
+        xl:block
+    }

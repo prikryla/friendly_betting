@@ -43,3 +43,9 @@ We welcome contributions! Feel free to fork the repository, make improvements, a
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it!
+
+If tailwind and css yeet at you add this to user settings JSON (CMD+SHIFT+P): 
+```"files.associations": {
+  "*.css": "tailwindcss"
+}
+```

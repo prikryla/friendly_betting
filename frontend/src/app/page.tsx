@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Logo from "./components/HomeComponents/Logo/logo";
 import "tailwindcss/tailwind.css";
 import IntroSignPost from "./components/HomeComponents/introsignpost";
-import LandingImage from "./components/landingimage";
+import LandingImage from "./components/LandingImage";
 
 export default function Home() {
   return (
