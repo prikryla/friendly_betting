@@ -9,7 +9,7 @@ const authRoutes = ['/dashboard'];
 export default auth((req) => {
     const { nextUrl } = req;
     const isLoggedIn = !!req.auth;
-    const isApiAuthRoute = nextUrl.pathname.startsWith('/login') || nextUrl.pathname === '/' || nextUrl.pathname === '/register';
+    const isApiAuthRoute = nextUrl.pathname.startsWith('/login') || nextUrl.pathname === '/' || nextUrl.pathname === '/register' || nextUrl.pathname === '/forgotpassword';
     const isPublicRoute = nextUrl.pathname === '/';
         
     const isAuthRoute = authRoutes.some(route => nextUrl.pathname.startsWith(route));

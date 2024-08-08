@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import React from "react";
+import './forgotpassword.scss';
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -8,6 +10,9 @@ const ForgotPassword: React.FC = () => {
   ): void => {
     setEmail(event.target.value);
   };
+/**
+ * TODO 
+ */
 
   const handleSubmit = (): void => {
     event?.preventDefault();
@@ -15,10 +20,10 @@ const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1 className="text-2xl font-medium">Zapomenuté heslo</h1>
-      <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-        <label htmlFor={email} className="flex flex-col gap-2 text-line">
+    <div className="forgot-password-container">
+      <h1>Zapomenuté heslo</h1>
+      <form className="forgot-form-container" onSubmit={handleSubmit}>
+        <label htmlFor={email}>
           E-mail
           <input
             name="email"
@@ -26,12 +31,10 @@ const ForgotPassword: React.FC = () => {
             type="email"
             onChange={handleChangeEmail}
             required
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
           />
         </label>
         <button
           type="submit"
-          className="w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line cursor-pointer"
         >
           Obnovit heslo
         </button>

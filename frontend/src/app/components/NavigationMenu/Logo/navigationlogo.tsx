@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 
-import './navigationlogo.css';
+import './navigationlogo.scss';
 
 const NavigationLogo: NextPage = () => {
     return (

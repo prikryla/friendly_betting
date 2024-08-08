@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-container {
+    @apply flex flex-row items-center w-screen content-center justify-between h-20
+}
 .menu-container {
     @apply hidden 
         justify-end 

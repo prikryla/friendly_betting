@@ -1,10 +1,11 @@
 import Image from "next/image";
+import './intrologo.scss';
 
 const Logo = () => {
   return (
-    <div className="flex gap-7 justify-start mt-10 lg:flex md:flex xl:flex">
+    <div className="logo-container">
       <Image src="/Logo.png" alt="Logo of app" width={100} height={100} />
-      <h1 className="text-4xl lg:text-5xl font-semibold">
+      <h1 className="styled-title">
         Friendly <br />
         Betting
       </h1>

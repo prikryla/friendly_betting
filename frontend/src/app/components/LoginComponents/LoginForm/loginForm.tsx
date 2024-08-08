@@ -1,9 +1,12 @@
 "use client";
+import React from "react";
 import { signIn } from "next-auth/react";
 import {  useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { authenticate } from "@/app/lib/action";
-import axios from "axios";
+
+import './loginform.scss';
+
 interface ILoginData {
   username: string;
   password: string;
@@ -25,22 +28,12 @@ const LoginForm: React.FC = () => {
     setLoginData({ ...loginData, [name]: value });
   };
 
-  const handleSubmit = (event: React.FormEvent): void => {
-    event?.preventDefault();
-/*     if (loginData.password.length < 8) {
-      setShowShortPassword(true);
-    } else {
-      console.log(loginData);
-    } */
-  };
-
   return (
-    <div className="flex flex-col gap-10">
-      <h1 className="text-2xl font-medium">Přihlásit se</h1>
-      <form className="flex flex-col gap-16" action={dispatch}>
+    <div className="login-container">
+      <h1 className="login-heading">Přihlásit se</h1>
+      <form className="login-form" action={dispatch}>
         <label
           htmlFor={loginData.username}
-          className="flex flex-col gap-2 text-line"
         >
           Uživatelské jméno
           <input
@@ -48,12 +41,10 @@ const LoginForm: React.FC = () => {
             value={loginData.username}
             type="text"
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
         </label>
         <label
           htmlFor={loginData.password}
-          className="flex flex-col gap-2 text-line"
         >
           Heslo
           <input
@@ -61,7 +52,6 @@ const LoginForm: React.FC = () => {
             value={loginData.password}
             type="password"
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5"
           />
           {showShortPassword && (
             <p style={{ color: "red" }}>Heslo je příliš krátké</p>
@@ -69,7 +59,6 @@ const LoginForm: React.FC = () => {
         </label>
         <button
           type="submit"
-          className="w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line"
         >
           Přihlásit se
         </button>

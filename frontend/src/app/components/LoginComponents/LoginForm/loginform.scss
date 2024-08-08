@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login-container {
+    @apply flex flex-col gap-10;
+}
+
+.login-heading {
+    @apply text-2xl font-medium;
+}
+
+.login-form {
+    @apply flex flex-col gap-16;
+
+    label {
+        @apply flex flex-col gap-2;
+    }
+
+    input {
+        @apply w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5;
+    }
+
+    button {
+        @apply w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line;
+    }
+}
