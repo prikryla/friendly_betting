@@ -1,5 +1,7 @@
 "use client";
+import React from "react";
 import { useState } from "react";
+import './registerform.scss';
 
 interface IRegisterData {
   email: string;
@@ -34,12 +36,11 @@ const RegisterForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1 className="text-2xl font-medium">Registrace</h1>
-      <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+    <div className="register-container">
+      <h1>Registrace</h1>
+      <form className="form-container" onSubmit={handleSubmit}>
         <label
           htmlFor={registerData.email}
-          className="flex flex-col gap-2 text-line"
         >
           E-mail
           <input
@@ -53,7 +54,6 @@ const RegisterForm: React.FC = () => {
         </label>
         <label
           htmlFor={registerData.password}
-          className="flex flex-col gap-2 text-line"
         >
           Jak ti máme říkat?
           <input
@@ -62,12 +62,10 @@ const RegisterForm: React.FC = () => {
             type="text"
             required
             onChange={handleChange}
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
           />
         </label>
         <label
           htmlFor={registerData.password}
-          className="flex flex-col gap-2 text-line"
         >
           Heslo
           <input
@@ -76,7 +74,6 @@ const RegisterForm: React.FC = () => {
             type="password"
             onChange={handleChange}
             required
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
           />
           {registerData.password !== "" && registerData.password.length < 8 && (
             <p style={{ color: "red" }}>Heslo je příliš krátké</p>
@@ -84,7 +81,6 @@ const RegisterForm: React.FC = () => {
         </label>
         <label
           htmlFor={registerData.password}
-          className="flex flex-col gap-2 text-line"
         >
           Heslo znovu
           <input
@@ -93,7 +89,6 @@ const RegisterForm: React.FC = () => {
             type="password"
             onChange={handleChange}
             required
-            className="w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 "
           />
           {registerData.passwordAgain !== "" &&
             registerData.password !== registerData.passwordAgain && (
@@ -103,7 +98,6 @@ const RegisterForm: React.FC = () => {
         <button
           type="submit"
           disabled={badPassword}
-          className="w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line cursor-pointer"
         >
           Registrovat
         </button>

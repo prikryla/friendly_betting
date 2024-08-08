@@ -3,7 +3,7 @@ import { signOut } from "../../../../auth";
 import MenuItem from "./MenuItem/menuitem";
 import NavigationLogo from "./Logo/navigationlogo";
 
-import './navigationmenu.css';
+import './navigationmenu.scss';
 
 interface IMenuItems {
     href: string;
@@ -21,7 +21,7 @@ const menuItemsArr: IMenuItems[] = [
 
 const NavigationMenu: React.FC = () => {
     return (
-        <main className="flex flex-row items-center w-screen content-center justify-between h-20">
+        <main className="main-container">
             <div className="logo-container">
                 <NavigationLogo />
             </div>
