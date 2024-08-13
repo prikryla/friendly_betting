@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 
-import './menuitem.css';
+import './menuitem.scss';
 
 
 interface IMenuItemProps {
