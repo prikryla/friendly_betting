@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
-import { signIn } from "next-auth/react";
-import {  useEffect, useState } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import React, { useEffect } from "react";
+import {  useState } from "react";
+import { useFormState } from "react-dom";
 import { authenticate } from "@/app/lib/action";
 
 import './loginform.scss';
@@ -15,18 +14,23 @@ interface ILoginData {
 
 const LoginForm: React.FC = () => {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
-  const [showShortPassword, setShowShortPassword] = useState<boolean>(false);
+  const [badCredentials, setBadCredentials] = useState<boolean>(false);
   const [loginData, setLoginData] = useState<ILoginData>({
     username: "",
     password: "",
     csrfToken: "",
   });
-  
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setShowShortPassword(false);
+    setBadCredentials(false);
     const { name, value } = event.target;
     setLoginData({ ...loginData, [name]: value });
   };
+
+  useEffect(() => {
+    if (errorMessage) {
+      setBadCredentials(true)
+    }
+  }, [errorMessage])
 
   return (
     <div className="login-container">
@@ -38,6 +42,7 @@ const LoginForm: React.FC = () => {
           Uživatelské jméno
           <input
             name="username"
+            className={badCredentials ? "error-input" : ""}
             value={loginData.username}
             type="text"
             onChange={handleChange}
@@ -46,17 +51,24 @@ const LoginForm: React.FC = () => {
         <label
           htmlFor={loginData.password}
         >
-          Heslo
+          Heslo 
           <input
             name="password"
+            className={badCredentials ? "error-input" : ""}
             value={loginData.password}
             type="password"
             onChange={handleChange}
           />
-          {showShortPassword && (
-            <p style={{ color: "red" }}>Heslo je příliš krátké</p>
-          )}
+          <p
+          className="error-message"
+          style={{
+            visibility: badCredentials  ? 'visible' : 'hidden',
+          }}
+        >
+          Špatné přihlašovací údaje
+       </p>
         </label>
+       
         <button
           type="submit"
         >

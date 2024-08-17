@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Logo from "../components/HomeComponents/Logo/logo";
-import LandingImage from "../components/landingimage";
-import LoginForm from "../components/LoginComponents/LoginForm/loginForm";
+import LandingImage from "../components/LandingImage";
+import LoginForm from "../components/LoginComponents/LoginForm/loginform";
+
 
 
 export const metadata: Metadata = {

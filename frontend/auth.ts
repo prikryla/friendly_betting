@@ -21,10 +21,10 @@ async function loginUser(username: string, password: string) {
             'Content-Type': 'application/json',
         }
         const response = await axios.post('http://127.0.0.1:8000/api/auth/login/', {'username' :username, 'password': password}, { headers: headers });
-        console.log('login user metoda response čéče: ', response.data);
         return response.data;
-    } catch (error) {
-        console.log(error)
+        // any psst
+    } catch (error: any) {
+        return null
     }
 }
 
@@ -44,7 +44,6 @@ export const { auth, signIn, signOut } = NextAuth({
             const { username, password } = parsedCredentials.data;
             const user = await loginUser(username, password)
             if (!user) return null
-            console.log('usrik kamo: ', user);
             if (user) return user
         }
         return null
