@@ -11,7 +11,7 @@
 }
 
 .login-form {
-    @apply flex flex-col gap-16;
+    @apply flex flex-col gap-10;
 
     label {
         @apply flex flex-col gap-2;
@@ -23,5 +23,12 @@
 
     button {
         @apply w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line;
+    }
+
+    .error-message {
+        color: #D7141A;
+    }
+    .error-input {
+        border: 1px solid #D7141A;
     }
 }
