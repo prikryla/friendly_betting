@@ -1,23 +1,10 @@
 import React from "react";
-import { signOut } from "../../../../auth";
 import MenuItem from "./MenuItem/menuitem";
 import NavigationLogo from "./Logo/navigationlogo";
+import { menuItemsArr } from "@/app/lib/helpersConstant";
 
 import './navigationmenu.scss';
-
-interface IMenuItems {
-    href: string;
-    textToRender: string;
-}
-
-const menuItemsArr: IMenuItems[] = [
-    { href: '/dashboard', textToRender: 'Přehled'},
-    { href: '/dashboard/mytips', textToRender: 'Moje tipy'},
-    { href: '/dashboard/currentresults', textToRender: 'Průběžné výsledky'},
-    { href: '/dashboard/overallresults', textToRender: 'Celkové výsledky'},
-    { href: '/dashboard/profile', textToRender: 'Profil'},
-]
-
+import { handleLogout } from "@/app/lib/utils";
 
 const NavigationMenu: React.FC = () => {
     return (
@@ -31,17 +18,11 @@ const NavigationMenu: React.FC = () => {
                         <MenuItem key={index} href={item.href} textToRender={item.textToRender} />
                     )
                 })}
-                <form
-                    action={async () => {
-                        'use server';
-                        await signOut();
-                }}
-                >
-                    <button>         
-                        <p className="logout-button">Odhlásit se</p>
-                    </button>
-
-                </form>
+                    <form action={handleLogout}>
+                        <button>         
+                            <p className="logout-button">Odhlásit se</p>
+                        </button>
+                    </form>
             </div>
         </main>
     )

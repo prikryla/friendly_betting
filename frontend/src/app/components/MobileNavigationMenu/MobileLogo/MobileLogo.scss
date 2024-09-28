@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobileLogoContainer {
+    @apply gap-5 my-7 mx-8 sm:hidden flex-row items-center flex
+}
+.nameHeading {
+    @apply text-4xl font-bold
+}

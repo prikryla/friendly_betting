@@ -1,17 +1,13 @@
-import { Metadata } from "next";
 import React from "react";
-import NavigationMenu from "../components/NavigationMenu/navigationmenu";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Současné výsledky | Friendly Betting",
+  title: "Přehled | Friendly Betting",
 };
 const Dashboard = () => {
   return (
     <main className="flex justify-center">
-      <div>
-        <NavigationMenu />
-      </div>
-
+      <h1>Přehled</h1>
     </main>
   );
 };

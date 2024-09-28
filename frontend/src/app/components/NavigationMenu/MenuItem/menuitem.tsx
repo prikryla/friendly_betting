@@ -1,7 +1,10 @@
+'use client'
+
 import { NextPage } from "next";
 import Link from "next/link";
 
 import './menuitem.scss';
+import { usePathname } from "next/navigation";
 
 
 interface IMenuItemProps {
@@ -10,9 +13,10 @@ interface IMenuItemProps {
 }
 
 const MenuItem: NextPage<IMenuItemProps> = ({ href, textToRender }) => {
+    const pathname = usePathname();
     return (
         <>
-            <button className="menu-item"><Link href={href}>{textToRender}</Link></button>
+            <button className={`menu-item ${pathname === href ? 'active' : ''}`}><Link href={href}>{textToRender}</Link></button>
         </>
     )
 }
