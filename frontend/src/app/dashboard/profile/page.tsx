@@ -1,3 +1,4 @@
+import WorkInProgress from "@/app/components/WorkInProgress/WorkInProgress";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,8 +6,9 @@ export const metadata: Metadata = {
 };
 const MyProfile = () => {
   return (
-    <main className="flex justify-center">
-      <h1>Můj profil</h1>
+    <main>
+      <WorkInProgress />
+      <h1>Nastavení profilu</h1>
     </main>
   );
 };
