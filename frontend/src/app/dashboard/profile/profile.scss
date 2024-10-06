@@ -1,0 +1,43 @@
+.settingsHeading {
+    @apply text-2xl pt-3 pl-6 font-semibold;
+}
+
+.profileContainer {
+    @apply flex justify-center items-center flex-col mt-5;
+}
+.profileImage {
+    @apply rounded-full;
+}
+
+.profileLetters {
+    @apply w-24 h-24 rounded-full flex justify-center items-center text-2xl uppercase;
+    color: #fff;
+}
+
+.profileSettings {
+    @apply flex flex-row items-center gap-3 mt-8 cursor-pointer md:hover:border-b md:pb-1 md:px-1;
+    color: #666666;
+}
+.inputContainer {
+    @apply mt-12;
+    color: #666666;
+    &.smallerMargin {
+        @apply mt-8;
+    }
+
+    .dataContainer {
+        @apply w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 flex flex-row items-center;
+        background-color: #F7F7F8;
+    }
+
+    .button {
+        margin-top: -5px;
+        margin-right: -200px;
+        text-decoration: underline;
+        float: right;
+    }
+}
+
+label {
+    @apply flex flex-col gap-2;
+}
