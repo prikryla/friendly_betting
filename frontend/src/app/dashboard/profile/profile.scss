@@ -1,9 +1,13 @@
+
+.profilePage {
+    @apply flex flex-row justify-center gap-36 md:gap-12;
+}
 .settingsHeading {
-    @apply text-2xl pt-3 pl-6 font-semibold;
+    @apply text-2xl pt-3 font-semibold;
 }
 
 .profileContainer {
-    @apply flex justify-center items-center flex-col mt-5;
+    @apply flex justify-center items-center md:items-start flex-col mt-5;
 }
 .profileImage {
     @apply rounded-full;
@@ -31,13 +35,14 @@
     }
 
     .button {
-        margin-top: -5px;
-        margin-right: -200px;
-        text-decoration: underline;
-        float: right;
+        @apply -mt-1.5 -mr-52 underline lg:mr-[-260px]
     }
 }
 
 label {
     @apply flex flex-col gap-2;
+}
+
+.sportFact {
+    @apply hidden md:block;
 }
