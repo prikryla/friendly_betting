@@ -1,0 +1,16 @@
+.footerContainer {
+    @apply flex flex-col sm:flex-row sm:justify-between sm:mx-5 justify-center items-center gap-8 mt-12 w-full;
+    color: #666666;
+}
+
+.link {
+    @apply underline;
+}
+
+.authors {
+    @apply text-xs;
+}
+
+.randomText {
+    @apply hidden lg:block;
+}
