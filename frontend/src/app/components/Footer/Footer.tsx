@@ -3,7 +3,6 @@ import FooterLogo from './FooterLogo/FooterLogo';
 
 import './Footer.scss';
 
-
 const Footer: React.FC = () => {
     const date = new Date();
     const renderDate = 2024 === date.getFullYear() ? 2024 : `2024-${date.getFullYear()}`;

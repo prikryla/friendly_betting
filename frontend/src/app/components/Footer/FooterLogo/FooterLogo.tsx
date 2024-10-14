@@ -1,10 +1,7 @@
 import React from "react";
-
-import './FooterLogo.scss';
 import Image from "next/image";
 
 import './FooterLogo.scss';
-
 
 const FooterLogo: React.FC = () => {
     return (
