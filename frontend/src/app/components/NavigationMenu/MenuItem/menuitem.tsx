@@ -1,11 +1,9 @@
 'use client'
-
 import { NextPage } from "next";
 import Link from "next/link";
-
-import './menuitem.scss';
 import { usePathname } from "next/navigation";
 
+import './menuitem.scss';
 
 interface IMenuItemProps {
     href: string;

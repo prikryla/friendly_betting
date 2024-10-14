@@ -1,12 +1,12 @@
 'use client'
-
 import React from "react";
-import { menuItemsArr } from "@/app/lib/helpersConstant";
-import './mobilenavigation.scss';
 import Link from "next/link";
+import MobileLogo from "./MobileLogo/MobileLogo";
 import { handleLogout } from "@/app/lib/utils";
 import { usePathname } from "next/navigation";
-import MobileLogo from "./MobileLogo/MobileLogo";
+import { menuItemsArr } from "@/app/lib/helpersConstant";
+
+import './mobilenavigation.scss';
 
 const MobileNavigation: React.FC = () => {
     const pathname = usePathname();
@@ -21,11 +21,11 @@ const MobileNavigation: React.FC = () => {
                     </div>
                 )
             })}
-                    <form action={handleLogout}>
-                        <button>         
-                            <p className="mobile-logout-button">Odhlásit se</p>
-                        </button>
-                    </form>
+            <form action={handleLogout}>
+                <button>         
+                    <p className="mobile-logout-button">Odhlásit se</p>
+                </button>
+            </form>
         </div>
         </> 
     )
