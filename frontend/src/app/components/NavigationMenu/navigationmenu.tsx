@@ -31,7 +31,6 @@ const NavigationMenu: React.FC = () => {
                         <MenuItem key={index} href={item.href} textToRender={item.textToRender} />
                     );
                 })}
-<<<<<<< HEAD
                 <form
                     // eslint-disable-next-line @typescript-eslint/no-misused-promises
                     action={async () => {
@@ -43,13 +42,6 @@ const NavigationMenu: React.FC = () => {
                         <p className='logoutButton'>Odhlásit se</p>
                     </button>
                 </form>
-=======
-                    <form action={handleLogout}>
-                        <button>         
-                            <p className="logout-button">Odhlásit se</p>
-                        </button>
-                    </form>
->>>>>>> main
             </div>
         </main>
     );

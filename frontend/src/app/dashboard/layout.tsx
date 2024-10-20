@@ -2,7 +2,11 @@ import React from 'react';
 import NavigationMenu from '../components/NavigationMenu/navigationmenu';
 import MobileNavigation from '../components/MobileNavigationMenu/mobilenavigation';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface IProps {
+    children: React.ReactNode;
+}
+
+const Layout: React.FC<IProps> = ({ children }: { children: React.ReactNode }) => {
     return (
         <main>
             <div>
@@ -14,4 +18,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>{children}</div>
         </main>
     );
-}
+};
+
+export default Layout;
