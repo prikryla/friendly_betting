@@ -9,9 +9,18 @@
         lg:text-base
         xl:text-lg 
         2xl:text-xl
-        hover:border-b 
         md:px-1
         lg:px-1
         px-2
         cursor-pointer;
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 15px;      
+    }
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 15px; 
 }
