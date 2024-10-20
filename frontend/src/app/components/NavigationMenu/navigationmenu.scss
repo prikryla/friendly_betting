@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 .mainContainer {
     @apply flex flex-row items-center w-screen content-center justify-between h-20
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-container {
+    @apply hidden sm:flex flex-row items-center w-screen content-center justify-between h-20
+>>>>>>> main
 }
 .menuContainer {
     @apply hidden 
@@ -18,14 +27,23 @@
         md:w-20
 }
 
+<<<<<<< HEAD
 .logoutButton {
+=======
+.logout-button {   
+>>>>>>> main
     @apply 
         text-xs 
         md:text-base
-        lg:text-lg
+        lg:text-base
         xl:text-lg 
-        hover:border-b 
+        2xl:text-xl
         md:px-1
+        lg:px-1
         px-2
         cursor-pointer;
+&:hover {
+    text-decoration: underline;
+    text-underline-offset: 15px;      
+}
 }

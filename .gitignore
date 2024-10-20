@@ -63,3 +63,7 @@ __pycache__
 # typescript
 /frontend/*.tsbuildinfo
 /frontend/next-env.d.ts
+
+db.sqlite3
+/frontend/package-lock.json
+/frontend/package.json

@@ -10,11 +10,9 @@ interface IMenuItemProps {
 
 const MenuItem: React.FC<IMenuItemProps> = ({ href, textToRender }) => {
     return (
-        <>
-            <button className='menuItem'>
-                <Link href={href}>{textToRender}</Link>
-            </button>
-        </>
+        <button className='menuItem'>
+            <Link href={href}>{textToRender}</Link>
+        </button>
     );
 };
 
