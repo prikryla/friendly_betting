@@ -1,7 +1,7 @@
+import React from "react";
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
 import { poppins } from "./ui/fonts";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Friendly Betting",

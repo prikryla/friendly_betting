@@ -1,0 +1,212 @@
+[
+    {
+        "id": 0,
+        "image": "/footballFactsImages/firstwc.jpg",
+        "factHeading": "První MS ve fotbale",
+        "factText": "První MS ve fotbale se konalo v roce 1930 v Uruguayi. Tento šampionát vyhrál právě hostitelský tým, Uruguay, po vítězství nad Argentinou 4:2 ve finále.",
+        "type": "football"
+    },
+    {
+        "id": 1,
+        "image": "/footballFactsImages/brazil.jpg",
+        "factHeading": "Nejúspěšnější země na MS ve fotbale",
+        "factText": "Brazílie je nejúspěšnější zemí v historii MS s pěti vítězstvími (1958, 1962, 1970, 1994, 2002).",
+        "type": "football"
+    },
+    {
+        "id": 2,
+        "image": "/footballFactsImages/pele.jpg",
+        "factHeading": "Legendární Pelé",
+        "factText": "Pelé je jediným hráčem, který vyhrál MS třikrát – v letech 1958, 1962 a 1970. Kromě toho byl v roce 1958 ve věku 17 let nejmladším hráčem, který kdy vstřelil gól ve finále MS.",
+        "type": "football"
+    },
+    {
+        "id": 3,
+        "image": "/footballFactsImages/fontaine.webp",
+        "factHeading": "Nejvíce gólů na jednom MS",
+        "factText": "Just Fontaine, francouzský útočník, drží rekord v počtu gólů vstřelených na jednom mistrovství – 13 gólů na MS 1958 ve Švédsku.",
+        "type": "football"
+    },
+    {
+        "id": 4,
+        "image": "/footballFactsImages/wc.jpg",
+        "factHeading": "Hostitelské země a vítězství",
+        "factText": "Jen šest zemí vyhrálo MS jako hostitelský tým: Uruguay (1930), Itálie (1934), Anglie (1966), Německo (1974), Argentina (1978) a Francie (1998).",
+        "type": "football"
+    },
+    {
+        "id": 5,
+        "image": "/footballFactsImages/firstme.jpg",
+        "factHeading": "První Mistrovství Evropy (1960)",
+        "factText": "První ME se konalo v roce 1960 ve Francii. Turnaj vyhrál Sovětský svaz, když ve finále porazil Jugoslávii 2:1.",
+        "type": "football"
+    },
+    {
+        "id": 6,
+        "image": "/footballFactsImages/firstme.jpg",
+        "factHeading": "Nejúspěšnější země na ME ve fotbale",
+        "factText": "Donedávna byly týmy Německa a Španělska nejúspěšnějšími na mistrovství Evropy. Německo získalo tituly v letech 1972, 1980 a 1996. V roce 2024 však Španělsko naklonilo misky vah na svou stranu, když ke svým triumfům z let 1964, 2008 a 2012 přidalo i vítězství z roku 2024.",
+        "type": "football"
+    },
+    {
+        "id": 7,
+        "image": "/footballFactsImages/spain.jpeg",
+        "factHeading": "Nejúspěšnější země na ME ve fotbale",
+        "factText": "Donedávna byly týmy Německa a Španělska nejúspěšnějšími na mistrovství Evropy. Německo získalo tituly v letech 1972, 1980 a 1996. V roce 2024 však Španělsko naklonilo misky vah na svou stranu, když ke svým triumfům z let 1964, 2008 a 2012 přidalo i vítězství z roku 2024.",
+        "type": "football"
+    },
+    {
+        "id": 8,
+        "image": "/footballFactsImages/denmark.jpeg",
+        "factHeading": "Největší překvapení",
+        "factText": "Jedním z největších překvapení v historii ME bylo vítězství Dánska v roce 1992. Dánsko se původně vůbec nekvalifikovalo, ale bylo pozváno na poslední chvíli kvůli vyloučení Jugoslávie a nakonec celý turnaj vyhrálo.",
+        "type": "football"
+    },
+    {
+        "id": 9,
+        "image": "/footballFactsImages/platini.jpeg",
+        "factHeading": "Nejvíce gólů na jednom ME",
+        "factText": "Francouz Michel Platini drží rekord v počtu gólů na jednom turnaji ME. Na ME 1984 vstřelil 9 gólů a pomohl Francii k titulu. Tento rekord stále platí, i když v současnosti se hraje více zápasů na turnaji.",
+        "type": "football"
+    },
+    {
+        "id": 10,
+        "image": "/footballFactsImages/azteca.png",
+        "factHeading": "Vysoká nadmořská výška na MS",
+        "factText": "Finále MS 1970 v Mexiku se hrálo na stadionu Estadio Azteca v nadmořské výšce 2 200 metrů, což je jedna z největších nadmořských výšek, na které se kdy hrálo finále. Toto prostředí dělalo hráčům fyzické problémy, zejména pro týmy z nižších nadmořských výšek.",
+        "type": "football"
+    },
+    {
+        "id": 11,
+        "image": "/footballFactsImages/fastest.webp",
+        "factHeading": "Nejrychlejší gól v historii MS",
+        "factText": "Hakan Şükür z Turecka vstřelil nejrychlejší gól v historii MS za pouhých 11 sekund během zápasu o třetí místo proti Jižní Koreji na MS 2002.",
+        "type": "football"
+    },
+    {
+        "id": 12,
+        "image": "/footballFactsImages/maracanazo.jpg",
+        "factHeading": "Změna pravidel pro remízu ve finále",
+        "factText": "Až do MS 1974 bylo možné, že finále skončí remízou a titul se určí buď v opakovaném zápase, nebo na základě jiných pravidel. Například finále MS 1950 bylo hráno v systému „mini-ligy“, kde Brazílie ztratila svůj titul prohrou s Uruguayí ve slavném zápase „Maracanazo“.",
+        "type": "football"
+    },
+    {
+        "id": 13,
+        "image": "/footballFactsImages/goldengoal.jpg",
+        "factHeading": "První zlatý gól na ME",
+        "factText": "Na ME 1996 bylo poprvé zavedeno pravidlo zlatého gólu, které znamenalo, že tým, který vstřelí gól v prodloužení, automaticky vyhraje. Toto pravidlo se uplatnilo právě ve finále ME 1996, kdy Německo porazilo Českou republiku 2:1, přičemž vítězný gól vstřelil Oliver Bierhoff.",
+        "type": "football"
+    },
+    {
+        "id": 14,
+        "image": "/footballFactsImages/germany.jpeg",
+        "factHeading": "Nejvíce účastí ve finále ME",
+        "factText": "Německo má nejvíce účastí ve finále Mistrovství Evropy, celkem 6 (1972, 1976, 1980, 1992, 1996, 2008), z čehož třikrát vyhrálo. Jejich pravidelná přítomnost ve finále svědčí o jejich konzistenci na vrcholových turnajích.",
+        "type": "football"
+    },
+    {
+        "id": 15,
+        "image": "/footballFactsImages/villa.avif",
+        "factHeading": "Obhajoba ME",
+        "factText": "Španělsko čekalo na svůj druhý titul evropského šampiona celých 44 let. Po svém vítězství v roce 1964 se jim podařilo vyhrát až v roce 2008. Tento úspěch pak završili ziskem titulu v roce 2012, což z nich dělá jediný tým v historii, který dokázal obhájit titul na Mistrovství Evropy.",
+        "type": "football"
+    },
+    {
+        "id": 16,
+        "image": "/footballFactsImages/klose.webp",
+        "factHeading": "Nejvyšší počet gólů v historii MS",
+        "factText": "Miroslav Klose z Německa drží rekord v počtu gólů vstřelených na MS, když během čtyř turnajů (2002–2014) zaznamenal celkem 16 gólů. Překonal tak Brazilce Ronalda, který má na svém kontě 15 branek.",
+        "type": "football"
+    },
+    {
+        "id": 17,
+        "image": "/footballFactsImages/euro96.jpg",
+        "factHeading": "„Zlatý gól“ a „Stříbrný gól“",
+        "factText": "Na ME 1996 byl zaveden koncept „zlatého gólu“, který znamenal, že tým, který vstřelí gól v prodloužení, automaticky vyhraje. Tento systém byl v roce 2002 změněn na „stříbrný gól“, který umožnil týmu hrát zbytek poločasu po vstřelení gólu, aby se určilo, zda druhý tým odpoví. Tento koncept byl později opuštěn a vrátilo se k běžnému prodloužení.",
+        "type": "football"
+    },
+    {
+        "id": 18,
+        "image": "/footballFactsImages/yamal.jpg",
+        "factHeading": "Rekordní mladík",
+        "factText": "Lamine Yamal na Mistrovství Evropy 2024 přepisoval historické rekordy. Stal se nejmladším hráčem, který kdy nastoupil na Euro, a to nejen v základní skupině, ale i ve vyřazovací části a ve finále. Navíc se zapsal do historie jako nejmladší hráč, který vstřelil gól na tomto turnaji. Yamal také vytvořil další významný milník, když se stal nejmladším vítězem celého turnaje. ",
+        "type": "football"
+    },
+    {
+        "id": 19,
+        "image": "/footballFactsImages/france.webp",
+        "factHeading": "Víc než jedno vítězství",
+        "factText": "Čtyři národy (Španělsko, Německo, Itálie a Francie) vyhrály UEFA Evropský fotbalový šampionát více než jednou.",
+        "type": "football"
+    },
+    {
+        "id": 20,
+        "image": "/hockeyFactsImages/canada.jpeg",
+        "factHeading": "Nejvíce titulů",
+        "factText": "Kanada a Rusko (včetně SSSR) mají nejvíce titulů. Kanada zvítězila na MS 28krát (stav k roku 2024) a Rusko/SSSR má dohromady 27 titulů.",
+        "type": "hockey"
+    },
+    {
+        "id": 21,
+        "image": "/hockeyFactsImages/sssr.jpeg",
+        "factHeading": "Nejdelší vítězná série",
+        "factText": "Sovětský svaz drží rekord za nejdelší vítěznou sérii na MS, kdy vyhrál 9 mistrovství světa za sebou v letech 1963 až 1971.",
+        "type": "hockey"
+    },
+    {
+        "id": 22,
+        "image": "/hockeyFactsImages/denmark.webp",
+        "factHeading": "Nejvíce gólů v jednom zápase",
+        "factText": "Dánsko kdysi drželo rekord v nejvyšší prohře, když bylo v roce 1949 poraženo Kanadou 47:0. Překonal ho pouze Nový Zéland, který byl v roce 1987 poražen Austrálií 58:0.",
+        "type": "hockey"
+    },
+    {
+        "id": 23,
+        "image": "/hockeyFactsImages/tretjak.jpg",
+        "factHeading": "Nejlepší střelec všech dob",
+        "factText": "Vladislav Treťjak je známý jako jeden z nejlepších brankářů všech dob, ale pokud jde o střelce, je to Helmuts Balderis z Lotyšska, který v 70. a 80. letech získal 17 gólů na MS.",
+        "type": "hockey"
+    },
+    {
+        "id": 24,
+        "image": "/hockeyFactsImages/sssr.jpeg",
+        "factHeading": "Nejvíce bodů v jednom turnaji",
+        "factText": "Vladimir Petrov ze Sovětského svazu nasbíral 34 bodů (18 gólů a 16 asistencí) na MS v roce 1973, což je rekord v počtu bodů na jednom šampionátu.",
+        "type": "hockey"
+    },
+    {
+        "id": 25,
+        "image": "/hockeyFactsImages/czech.jpg",
+        "factHeading": "Nejvyšší počet medailí na MS v hokeji",
+        "factText": "Když se podíváme na celkový počet získaných medailí na všech MS v hokeji, tak můžeme vidět na prvním místě Kanadu (53 medailí), na druhém místě Československo/Českou republiku (48 medailí), i Švédsko má stejný počet medailí, ale má o dvě zlaté méně (13 vs 11).",
+        "type": "hockey"
+    },
+    {
+        "id": 26,
+        "image": "/hockeyFactsImages/hockey.jpg",
+        "factHeading": "První mistrovství světa",
+        "factText": "První MS se konalo v roce 1920 jako součást letních olympijských her v Antverpách. Turnaj vyhrála Kanada.",
+        "type": "hockey"
+    },
+    {
+        "id": 27,
+        "image": "/hockeyFactsImages/hockey.jpg",
+        "factHeading": "Změny v formátu turnaje",
+        "factText": "V historii se měnil formát turnaje, včetně počtu účastníků, hracího systému (skupinová fáze, playoff atd.) a formy sestupu týmů do nižších divizí. Dnešní systém s 16 týmy ve dvou skupinách je zavedený od roku 2012.",
+        "type": "hockey"
+    },
+    {
+        "id": 28,
+        "image": "/hockeyFactsImages/finland.jpeg",
+        "factHeading": "Dominance evropských týmů",
+        "factText": "I když je Kanada často považována za kolébku hokeje, evropské týmy (zejména SSSR/Rusko, Švédsko, Česko a Finsko) hrají klíčovou roli na mistrovstvích světa. Týmy jako Švédsko, Finsko a Česko se pravidelně umisťují mezi nejlepšími.",
+        "type": "hockey"
+    },
+    {
+        "id": 29,
+        "image": "/hockeyFactsImages/czech.jpg",
+        "factHeading": "Fanoušci",
+        "factText": "MS v hokeji je jednou z nejnavštěvovanějších sportovních akcí na světě. Mistrovství světa v roce 2024, které se konalo v Česku (Praha a Ostrava), překonalo všechny rekordy návštěvnosti s více než 797 727 diváky.",
+        "type": "hockey"
+    }
+]

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Logo from "../components/HomeComponents/Logo/logo";
 import LandingImage from "../components/LandingImage";
-import LoginForm from "../components/LoginComponents/LoginForm/loginform";
+import LoginForm from "../components/LoginComponents/LoginForm/loginForm";
 
 
 
