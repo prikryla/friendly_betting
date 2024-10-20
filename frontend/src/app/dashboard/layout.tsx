@@ -1,6 +1,6 @@
 import React from 'react';
-import NavigationMenu from '../components/NavigationMenu/navigationmenu';
-import MobileNavigation from '../components/MobileNavigationMenu/mobilenavigation';
+import NavigationMenu from '../components/NavigationMenu/NavigationMenu';
+import MobileNavigation from '../components/MobileNavigationMenu/MobileNavigation';
 
 interface IProps {
     children: React.ReactNode;
