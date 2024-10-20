@@ -1,46 +1,39 @@
-"use client";
-import { useState } from "react";
-import React from "react";
-import './forgotpassword.scss';
+'use client';
+import React, { useState } from 'react';
+
+import './ForgotPassword.scss';
+
+//* * TODO functionality */
 
 const ForgotPassword: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
-  const handleChangeEmail = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
-    setEmail(event.target.value);
-  };
-/**
- * TODO 
- */
+    const [email, setEmail] = useState<string>('');
 
-  const handleSubmit = (): void => {
-    event?.preventDefault();
-    console.log(email);
-  };
+    const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>): void => {
+        setEmail(event.target.value);
+    };
 
-  return (
-    <div className="forgot-password-container">
-      <h1>Zapomenuté heslo</h1>
-      <form className="forgot-form-container" onSubmit={handleSubmit}>
-        <label htmlFor={email}>
-          E-mail
-          <input
-            name="email"
-            value={email}
-            type="email"
-            onChange={handleChangeEmail}
-            required
-          />
-        </label>
-        <button
-          type="submit"
-        >
-          Obnovit heslo
-        </button>
-      </form>
-    </div>
-  );
+    const handleSubmit = (): void => {
+        event?.preventDefault();
+    };
+
+    return (
+        <div className='forgotPasswordContainer'>
+            <h1>Zapomenuté heslo</h1>
+            <form className='forgotFormContainer' onSubmit={handleSubmit}>
+                <label htmlFor={email}>
+                    E-mail
+                    <input
+                        name='email'
+                        value={email}
+                        type='email'
+                        onChange={handleChangeEmail}
+                        required
+                    />
+                </label>
+                <button type='submit'>Obnovit heslo</button>
+            </form>
+        </div>
+    );
 };
 
 export default ForgotPassword;

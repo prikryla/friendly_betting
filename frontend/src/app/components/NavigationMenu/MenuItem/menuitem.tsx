@@ -1,20 +1,21 @@
-import { NextPage } from "next";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
-import './menuitem.scss';
-
+import './MenuItem.scss';
 
 interface IMenuItemProps {
     href: string;
     textToRender: string;
 }
 
-const MenuItem: NextPage<IMenuItemProps> = ({ href, textToRender }) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ href, textToRender }) => {
     return (
         <>
-            <button className="menu-item"><Link href={href}>{textToRender}</Link></button>
+            <button className='menuItem'>
+                <Link href={href}>{textToRender}</Link>
+            </button>
         </>
-    )
-}
+    );
+};
 
 export default MenuItem;
