@@ -1,8 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.logo-container {
+.logoContainer {
     @apply 
         flex
         items-center
@@ -12,7 +8,7 @@
         xl:font-bold
         2xl:text-4xl
 }
-.logo-text {
+.logoText {
     @apply
         sm:hidden 
         lg:block

@@ -1,9 +1,13 @@
-import React from "react"; 
-import NavigationMenu from "../components/NavigationMenu/navigationmenu";
-import MobileNavigation from "../components/MobileNavigationMenu/mobilenavigation";
+import React from 'react';
+import NavigationMenu from '../components/NavigationMenu/NavigationMenu';
+import MobileNavigation from '../components/MobileNavigationMenu/MobileNavigation';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
+interface IProps {
+    children: React.ReactNode;
+}
+
+const Layout: React.FC<IProps> = ({ children }: { children: React.ReactNode }) => {
+    return (
         <main>
             <div>
                 <NavigationMenu />
@@ -11,9 +15,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
                 <MobileNavigation />
             </div>
-            <div>
-                {children}
-            </div>
+            <div>{children}</div>
         </main>
-  );
-}
+    );
+};
+
+export default Layout;

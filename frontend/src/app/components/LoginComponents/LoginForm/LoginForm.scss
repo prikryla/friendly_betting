@@ -1,16 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.login-container {
+.loginContainer {
     @apply flex flex-col gap-10;
 }
 
-.login-heading {
+.loginHeading {
     @apply text-2xl font-medium;
 }
 
-.login-form {
+.loginForm {
     @apply flex flex-col gap-10;
 
     label {
@@ -25,10 +21,10 @@
         @apply w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line;
     }
 
-    .error-message {
+    .errorMessage {
         color: #D7141A;
     }
-    .error-input {
+    .errorInput {
         border: 1px solid #D7141A;
     }
 }

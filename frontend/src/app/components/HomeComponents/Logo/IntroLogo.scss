@@ -1,14 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.logo-container {
+.logoContainer {
     @apply flex gap-7 justify-start mt-10 
         lg:flex 
         md:flex 
         xl:flex
 }
-.styled-title {
+.styledTitle {
     @apply text-4xl font-semibold
         lg:text-5xl 
 }

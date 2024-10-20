@@ -1,4 +1,3 @@
-
 export const colorsArr = [
     '#FF5733', // sytá oranžová
     '#33B5FF', // světle modrá
@@ -14,5 +13,5 @@ export const colorsArr = [
     '#1ABC9C', // azurová
     '#C0392B', // červenohnědá
     '#9B59B6', // světlejší fialová
-    '#F39C12'  // mandarinková
+    '#F39C12', // mandarinková
 ];
