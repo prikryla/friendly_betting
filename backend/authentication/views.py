@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.middleware.csrf import get_token
+from .models import User
 
 # ---------------------------------
 # TODO: Finish this register method 
@@ -52,4 +53,18 @@ def log_out(request):
 def get_csrf_token(request):
     csrf_token = get_token(request)
     return JsonResponse({'csrfToken': csrf_token})
+
+@api_view(['POST'])
+def user_add_profile_image(request):
+    if request.method == 'POST':
+        try:
+            user = User.objects.get(id=request.user.id)
+            user.image = request.FILES['image']
+            user.save()
+            return JsonResponse({"message": "Profile image uploaded successfully"}, status=200)
+        except User.DoesNotExist:
+            return JsonResponse({"error": "User not found"}, status=404)
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
 
