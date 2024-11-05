@@ -36,6 +36,11 @@ For the frontend:
 
 Visit [http://localhost:3000](http://localhost:3000) to explore the Friendly Betting App!
 
+## Authentication
+1. Create .env file in ```/frontend``` folder
+2. Generate secret key for your application - ```openssl rand -base64 32```
+3. Put the key in .env file in this format - ```AUTH_SECRET=your-secret-key```
+
 ## Contributing
 
 We welcome contributions! Feel free to fork the repository, make improvements, and submit pull requests. Check out the [Contribution Guidelines](CONTRIBUTING.md) for more details.

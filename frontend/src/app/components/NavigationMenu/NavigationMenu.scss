@@ -1,11 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.main-container {
-    @apply hidden sm:flex flex-row items-center w-screen content-center justify-between h-20
+.mainContainer {
+    @apply flex flex-row items-center w-screen content-center justify-between h-20
 }
-.menu-container {
+.menuContainer {
     @apply hidden 
         justify-end 
         w-3/5
@@ -15,14 +11,14 @@
         xl:gap-10 xl:m-20
 }
 
-.logo-container {
+.logoContainer {
     @apply 
         w-1/5
         sm:w-20
         md:w-20
 }
 
-.logout-button {   
+.logoutButton {
     @apply 
         text-xs 
         md:text-base

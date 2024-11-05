@@ -1,0 +1,27 @@
+.registerContainer {
+    @apply flex flex-col gap-8;
+
+    & > h1 {
+        @apply text-2xl font-medium;
+    }
+}
+
+.formContainer {
+    @apply flex flex-col gap-8;
+
+    & > label {
+        @apply flex flex-col gap-2 text-line;
+    }
+}
+
+.styledInput {
+    @apply w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5;
+}
+
+.styledButton {
+    @apply w-80 lg:w-96 h-16 border rounded-full text-2xl font-semibold border-line cursor-pointer;
+}
+
+.wrongDataEntered {
+    color: red;
+}
