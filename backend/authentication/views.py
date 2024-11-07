@@ -4,6 +4,8 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.middleware.csrf import get_token
 from .models import User
+from django.conf import settings
+from rest_framework.parsers import MultiPartParser, FormParser
 
 # ---------------------------------
 # TODO: Finish this register method 
@@ -56,15 +58,18 @@ def get_csrf_token(request):
 
 @api_view(['POST'])
 def user_add_profile_image(request):
-    if request.method == 'POST':
-        try:
-            user = User.objects.get(id=request.user.id)
-            user.image = request.FILES['image']
-            user.save()
-            return JsonResponse({"message": "Profile image uploaded successfully"}, status=200)
-        except User.DoesNotExist:
-            return JsonResponse({"error": "User not found"}, status=404)
-        except Exception as e:
-            return JsonResponse({"error": str(e)}, status=400)
+    parser_classes = (MultiPartParser, FormParser)
+    try:
+        user = User.objects.get(id=request.user.id)
+        user.image = request.FILES['image']
+        user.save()
+
+        # Return the image URL in the response
+        image_url = f"{settings.MEDIA_URL}{user.image.name}"
+        return JsonResponse({"message": "Profile image uploaded successfully", "image_url": image_url}, status=200)
+    except User.DoesNotExist:
+        return JsonResponse({"error": "User not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=400)
 
 

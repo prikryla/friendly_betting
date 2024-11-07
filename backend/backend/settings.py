@@ -142,3 +142,10 @@ HOCKEY_API_KEY = os.environ.get('HOCKEY_API_KEY')
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Replace with your React frontend URL
+]
