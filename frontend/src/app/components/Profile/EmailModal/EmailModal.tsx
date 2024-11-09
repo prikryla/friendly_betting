@@ -5,6 +5,7 @@ import data from '../../../dashboard/profile/profile.json';
 
 import './EmailModal.scss';
 import Image from 'next/image';
+import { useOutsideClick } from '@/app/lib/hooks/useOutsideClick';
 
 interface IProps {
     closeModal: (type: ModalType) => void;
@@ -24,8 +25,13 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
         const { value } = event.target;
         setNewEmail(value);
     };
+
+    const modalRef = useOutsideClick(() => {
+        closeModal('email');
+    });
+
     return (
-        <div className='modal'>
+        <div className='modal' ref={modalRef}>
             <div className='titleContainer'>
                 <h1 className='title'>Změna e-mailu</h1>
                 <button
