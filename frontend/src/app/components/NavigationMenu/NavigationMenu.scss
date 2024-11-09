@@ -1,5 +1,5 @@
 .mainContainer {
-    @apply flex flex-row items-center w-screen content-center justify-between h-20
+    @apply hidden sm:flex flex-row items-center w-screen content-center justify-between h-20
 }
 .menuContainer {
     @apply hidden 

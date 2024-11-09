@@ -11,6 +11,7 @@ import { colorsArr } from './colorLib';
 import data from './profile.json';
 // CSS
 import './profile.scss';
+import ProfileDataContainer from '@/app/components/Profile/ProfileDataContainer/ProfileDataContainer';
 
 export const metadata: Metadata = {
     title: 'Můj profil | Friendly Betting',
@@ -64,27 +65,26 @@ const MyProfile: React.FC = () => {
                             />
                             <p>Změnit profilovou fotografii</p>
                         </div>
-                        <div className='inputContainer'>
-                            <label htmlFor='email'>
-                                E-mail
-                                <div className='dataContainer'>{data.email}</div>
-                                <button className='button'>Změnit e-mail</button>
-                            </label>
-                        </div>
-                        <div className='inputContainer smallerMargin'>
-                            <label htmlFor='username'>
-                                Tvoje jméno
-                                <div className='dataContainer'>{data.username}</div>
-                                <button className='button'>Změnit jméno</button>
-                            </label>
-                        </div>
-                        <div className='inputContainer smallerMargin'>
-                            <label htmlFor='password'>
-                                Heslo
-                                <div className='dataContainer'>{data.password}</div>
-                                <button className='button'>Změnit heslo</button>
-                            </label>
-                        </div>
+                        <ProfileDataContainer
+                            label='email'
+                            renderText='E-mail'
+                            buttonText='Změnit e-mail'
+                            data={data.email}
+                        />
+                        <ProfileDataContainer
+                            label='username'
+                            renderText='Uživatelské jméno'
+                            buttonText='Změnit jméno'
+                            data={data.username}
+                            smallerMargin
+                        />
+                        <ProfileDataContainer
+                            label='password'
+                            renderText='Heslo'
+                            buttonText='Změnit heslo'
+                            data={data.password}
+                            smallerMargin
+                        />
                     </div>
                 </div>
                 <div className='sportFact'>
