@@ -1,4 +1,6 @@
-import React, { createContext, useState } from 'react';
+'use client';
+
+import React, { createContext, useContext, useState } from 'react';
 
 interface ModalContextType {
     isModalOpen: boolean;
@@ -6,11 +8,11 @@ interface ModalContextType {
 }
 
 const ModalContext = createContext<ModalContextType>({
-    isModalOpen: false,
+    isModalOpen: true,
     setIsModalOpen: () => {},
 });
 
-const ModalProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
+export const ModalProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     return (
@@ -21,4 +23,4 @@ const ModalProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     );
 };
 
-export { ModalProvider, ModalContext };
+export const useMyContext = (): ModalContextType => useContext(ModalContext);

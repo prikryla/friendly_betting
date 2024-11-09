@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import NavigationMenu from '../components/NavigationMenu/NavigationMenu';
 import MobileNavigation from '../components/MobileNavigationMenu/MobileNavigation';

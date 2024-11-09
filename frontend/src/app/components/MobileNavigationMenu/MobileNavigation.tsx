@@ -24,6 +24,7 @@ const MobileNavigation: React.FC = () => {
                         </div>
                     );
                 })}
+                {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
                 <form action={handleLogout}>
                     <button>
                         <p className='mobile-logout-button'>Odhlásit se</p>
