@@ -12,6 +12,10 @@
     color: black;
 }
 
+.titleContainer {
+    @apply flex flex-row items-center justify-between;
+}
+
 .formContainer {
     & > label {
         @apply flex flex-col gap-2 text-line;

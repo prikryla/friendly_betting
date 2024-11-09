@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 import './ProfileDataContainer.scss';
-import EmailModal from '../EmailModal/EmailModal';
+import { type ModalType, useMyContext } from '@/app/context/ModalContext/ModalContext';
 
 interface IProps {
     label: string;
@@ -13,8 +13,6 @@ interface IProps {
     smallerMargin?: boolean;
 }
 
-type ModalType = 'email' | 'password' | 'username' | null;
-
 const ProfileDataContainer: React.FC<IProps> = ({
     label,
     data,
@@ -22,16 +20,7 @@ const ProfileDataContainer: React.FC<IProps> = ({
     buttonText,
     smallerMargin = false,
 }) => {
-    const [activeModal, setActiveModal] = useState<ModalType>(null);
-
-    const openModal = (type: ModalType): void => {
-        setActiveModal(type);
-    };
-
-    const closeModal = (): void => {
-        setActiveModal(null);
-    };
-
+    const { openModal } = useMyContext();
     return (
         <div className={classNames('inputContainer', { smallerMargin })}>
             <label htmlFor={label}>
@@ -46,7 +35,6 @@ const ProfileDataContainer: React.FC<IProps> = ({
                     {buttonText}
                 </button>
             </label>
-            {activeModal === 'email' && <EmailModal email={data} closeModal={closeModal} />}{' '}
         </div>
     );
 };

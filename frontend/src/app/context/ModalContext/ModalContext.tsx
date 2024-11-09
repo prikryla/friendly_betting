@@ -2,22 +2,38 @@
 
 import React, { createContext, useContext, useState } from 'react';
 
+export type ModalType = 'email' | 'password' | 'username' | null;
+
 interface ModalContextType {
     isModalOpen: boolean;
-    setIsModalOpen: (open: boolean) => void;
+    activeModal: ModalType;
+    openModal: (type: ModalType) => void;
+    closeModal: (type: ModalType) => void;
 }
 
 const ModalContext = createContext<ModalContextType>({
     isModalOpen: true,
-    setIsModalOpen: () => {},
+    activeModal: null,
+    openModal: () => {},
+    closeModal: () => {},
 });
 
 export const ModalProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [activeModal, setActiveModal] = useState<ModalType>(null);
 
+    const openModal = (type: ModalType): void => {
+        setIsModalOpen(true);
+        setActiveModal(type);
+    };
+
+    const closeModal = (): void => {
+        setIsModalOpen(false);
+        setActiveModal(null);
+    };
     return (
         // eslint-disable-next-line react/jsx-no-constructed-context-values
-        <ModalContext.Provider value={{ isModalOpen, setIsModalOpen }}>
+        <ModalContext.Provider value={{ isModalOpen, activeModal, openModal, closeModal }}>
             {children}
         </ModalContext.Provider>
     );

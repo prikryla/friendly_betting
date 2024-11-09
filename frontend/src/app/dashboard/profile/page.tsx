@@ -4,6 +4,7 @@ import { type Metadata } from 'next';
 import Image from 'next/image';
 import SportFact from '@/app/components/Profile/SportFacts/SportFact';
 import WorkInProgress from '@/app/components/WorkInProgress/WorkInProgress';
+import ProfileDataContainer from '@/app/components/Profile/ProfileDataContainer/ProfileDataContainer';
 // UTILS
 import { getRandomNumber } from '@/app/lib/helpers/helpers';
 import { colorsArr } from './colorLib';
@@ -11,7 +12,6 @@ import { colorsArr } from './colorLib';
 import data from './profile.json';
 // CSS
 import './profile.scss';
-import ProfileDataContainer from '@/app/components/Profile/ProfileDataContainer/ProfileDataContainer';
 
 export const metadata: Metadata = {
     title: 'Můj profil | Friendly Betting',
