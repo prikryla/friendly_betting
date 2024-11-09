@@ -1,5 +1,5 @@
 'use client';
-import React, { act, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import './ProfileDataContainer.scss';
@@ -24,10 +24,6 @@ const ProfileDataContainer: React.FC<IProps> = ({
 }) => {
     const [activeModal, setActiveModal] = useState<ModalType>(null);
 
-    useEffect(() => {
-        console.log(activeModal);
-    }, [activeModal]);
-
     const openModal = (type: ModalType): void => {
         setActiveModal(type);
     };
@@ -50,8 +46,7 @@ const ProfileDataContainer: React.FC<IProps> = ({
                     {buttonText}
                 </button>
             </label>
-            {/*             {activeModal === 'email' && <EmailModal email={data} closeModal={closeModal} />}
-             */}{' '}
+            {activeModal === 'email' && <EmailModal email={data} closeModal={closeModal} />}{' '}
         </div>
     );
 };

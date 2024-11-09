@@ -1,12 +1,30 @@
 .modal {
-    position: fixed;
+    @apply fixed w-11/12 max-w-md rounded-lg p-5;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    padding: 20px;
     background-color: white;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    @apply font-bold text-xl mb-5;
+    color: black;
+}
+
+.formContainer {
+    & > label {
+        @apply flex flex-col gap-2 text-line;
+
+        & > input {
+            @apply w-full h-16 border rounded-2xl text-base font-normal border-line indent-5 mb-10;  
+        }
+    };
+    .submitButton{
+        @apply w-full p-3 font-semibold;
+        border-radius: 20px;
+        background: #000000;
+        color: #ffffff;
+    }
 }
   
