@@ -57,22 +57,6 @@ def get_csrf_token(request):
     return JsonResponse({'csrfToken': csrf_token})
 
 @api_view(['POST'])
-def user_add_profile_image(request):
-    parser_classes = (MultiPartParser, FormParser)
-    try:
-        user = User.objects.get(id=request.user.id)
-        user.image = request.FILES['image']
-        user.save()
-
-        # Return the image URL in the response
-        image_url = f"{settings.MEDIA_URL}{user.image.name}"
-        return JsonResponse({"message": "Profile image uploaded successfully", "image_url": image_url}, status=200)
-    except User.DoesNotExist:
-        return JsonResponse({"error": "User not found"}, status=404)
-    except Exception as e:
-        return JsonResponse({"error": str(e)}, status=400)
-
-@api_view(['POST'])
 def update_user(request):
     # Ensure the user is authenticated
     if not request.user.is_authenticated:
