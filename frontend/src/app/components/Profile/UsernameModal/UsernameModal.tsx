@@ -7,14 +7,14 @@ import { useOutsideClick } from '@/app/lib/hooks/useOutsideClick';
 // DEBUG DATA ONLY!
 import data from '../../../dashboard/profile/profile.json';
 // CSS
-import './EmailModal.scss';
+import './UsernameModal.scss';
 
 interface IProps {
     closeModal: (type: ModalType) => void;
 }
 
-const EmailModal: React.FC<IProps> = ({ closeModal }) => {
-    const [newEmail, setNewEmail] = useState<string>(data.email);
+const UsernameModal: React.FC<IProps> = ({ closeModal }) => {
+    const [newUsername, setNewUsername] = useState<string>(data.username);
 
     const handleSubmit = (): void => {
         event?.preventDefault();
@@ -25,17 +25,17 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         const { value } = event.target;
-        setNewEmail(value);
+        setNewUsername(value);
     };
 
     const modalRef = useOutsideClick(() => {
-        closeModal('email');
+        closeModal('username');
     });
 
     return (
         <div className='modal' ref={modalRef}>
             <div className='titleContainer'>
-                <h1 className='title'>Změna e-mailu</h1>
+                <h1 className='title'>Změna jména</h1>
                 <button
                     style={{ marginTop: '-20px' }}
                     onClick={() => {
@@ -46,13 +46,13 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
                 </button>
             </div>
             <form onSubmit={handleSubmit} className='formContainer'>
-                <label htmlFor={newEmail}>
-                    E-mail
+                <label htmlFor={newUsername}>
+                    Tvoje jméno
                     <input
                         name='email'
-                        value={newEmail}
-                        placeholder={data.email}
-                        type='email'
+                        value={newUsername}
+                        placeholder={data.username}
+                        type='text'
                         onChange={handleChange}
                         required
                     />
@@ -65,4 +65,4 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
     );
 };
 
-export default EmailModal;
+export default UsernameModal;
