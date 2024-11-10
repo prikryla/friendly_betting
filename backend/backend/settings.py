@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'matches',
     'best_of',
     'django_crontab',
-    'corsheaders'
+    'corsheaders',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
