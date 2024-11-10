@@ -72,4 +72,29 @@ def user_add_profile_image(request):
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=400)
 
+@api_view(['POST'])
+def update_user(request):
+    # Ensure the user is authenticated
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "User not authenticated"}, status=401)
 
+    # Retrieve the authenticated user
+    try:
+        user = User.objects.get(id=request.user.id)
+    except User.DoesNotExist:
+        return JsonResponse({"error": "User not found"}, status=404)
+
+    # Update user fields if provided in the request data
+    if 'username' in request.data:
+        user.username = request.data['username']
+    if 'email' in request.data:
+        user.email = request.data['email']
+
+    # Save changes to the database
+    user.save()
+    
+    return JsonResponse({
+        "message": "User profile updated successfully",
+        "username": user.username,
+        "email": user.email
+    }, status=200)
