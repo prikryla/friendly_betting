@@ -10,10 +10,11 @@ import data from '../../../dashboard/profile/profile.json';
 import './EmailModal.scss';
 
 interface IProps {
+    modalType: ModalType;
     closeModal: (type: ModalType) => void;
 }
 
-const EmailModal: React.FC<IProps> = ({ closeModal }) => {
+const EmailModal: React.FC<IProps> = ({ modalType, closeModal }) => {
     const [newEmail, setNewEmail] = useState<string>(data.email);
 
     const handleSubmit = (): void => {
@@ -21,6 +22,7 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
         // TODO
         // eslint-disable-next-line no-console
         console.log('submit kamo');
+        closeModal(modalType);
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -29,7 +31,7 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
     };
 
     const modalRef = useOutsideClick(() => {
-        closeModal('email');
+        closeModal(modalType);
     });
 
     return (
@@ -39,7 +41,7 @@ const EmailModal: React.FC<IProps> = ({ closeModal }) => {
                 <button
                     style={{ marginTop: '-20px' }}
                     onClick={() => {
-                        closeModal('email');
+                        closeModal(modalType);
                     }}
                 >
                     <Image src='/Close.png' alt='Zavírací tlačítko' width={20} height={20} />

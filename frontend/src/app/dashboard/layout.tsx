@@ -9,6 +9,7 @@ import EmailModal from '../components/Profile/EmailModal/EmailModal';
 // UTILS
 import { useMyContext } from '../context/ModalContext/ModalContext';
 import UsernameModal from '../components/Profile/UsernameModal/UsernameModal';
+import PasswordModal from '../components/Profile/PasswordModal/PasswordModal';
 
 interface IProps {
     children: React.ReactNode;
@@ -28,8 +29,13 @@ const Layout: React.FC<IProps> = ({ children }: { children: React.ReactNode }) =
                 <div>{children}</div>
                 <Footer />
             </div>
-            {activeModal === 'email' && <EmailModal closeModal={closeModal} />}
-            {activeModal === 'username' && <UsernameModal closeModal={closeModal} />}
+            {activeModal === 'email' && <EmailModal modalType='email' closeModal={closeModal} />}
+            {activeModal === 'username' && (
+                <UsernameModal modalType='username' closeModal={closeModal} />
+            )}
+            {activeModal === 'password' && (
+                <PasswordModal modalType='password' closeModal={closeModal} />
+            )}
         </main>
     );
 };
