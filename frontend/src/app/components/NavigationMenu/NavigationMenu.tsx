@@ -1,9 +1,11 @@
 import React from 'react';
+// COMPONENTS
 import MenuItem from './MenuItem/MenuItem';
 import NavigationLogo from './Logo/NavigationLogo';
-
-import './NavigationMenu.scss';
+// UTILS
 import { handleLogout } from '@/app/lib/utils';
+// CSS
+import './NavigationMenu.scss';
 
 interface IMenuItems {
     href: string;

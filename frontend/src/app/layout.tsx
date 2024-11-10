@@ -1,8 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import './globals.scss';
+// UTILS
 import { poppins } from './ui/fonts';
 import { ModalProvider } from './context/ModalContext/ModalContext';
+// CSS
+import './globals.scss';
 
 export const metadata: Metadata = {
     title: 'Friendly Betting',

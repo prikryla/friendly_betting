@@ -1,7 +1,9 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+// COMPONENTS
 import MobileLogo from './MobileLogo/MobileLogo';
+// UTILS
 import { handleLogout } from '@/app/lib/utils';
 import { usePathname } from 'next/navigation';
 import { menuItemsArr } from '@/app/lib/helpersConstant';

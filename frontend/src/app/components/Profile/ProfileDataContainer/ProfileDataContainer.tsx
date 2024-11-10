@@ -1,9 +1,10 @@
 'use client';
 import React from 'react';
+// UTILS
 import classNames from 'classnames';
-
-import './ProfileDataContainer.scss';
 import { type ModalType, useMyContext } from '@/app/context/ModalContext/ModalContext';
+// CSS
+import './ProfileDataContainer.scss';
 
 interface IProps {
     label: string;
