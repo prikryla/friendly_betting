@@ -84,6 +84,7 @@ const MyProfile: React.FC = () => {
                             buttonText='Změnit heslo'
                             data={data.password}
                             smallerMargin
+                            isPassword
                         />
                     </div>
                 </div>

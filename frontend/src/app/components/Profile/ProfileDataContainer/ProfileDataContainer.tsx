@@ -12,6 +12,7 @@ interface IProps {
     renderText: string;
     buttonText: string;
     smallerMargin?: boolean;
+    isPassword?: boolean;
 }
 
 const ProfileDataContainer: React.FC<IProps> = ({
@@ -20,13 +21,19 @@ const ProfileDataContainer: React.FC<IProps> = ({
     renderText,
     buttonText,
     smallerMargin = false,
+    isPassword = false,
 }) => {
     const { openModal } = useMyContext();
     return (
         <div className={classNames('inputContainer', { smallerMargin })}>
             <label htmlFor={label}>
                 {renderText}
-                <div className='dataContainer'>{data}</div>
+                <input
+                    className='dataContainer'
+                    type={isPassword ? 'password' : 'text'}
+                    value={data}
+                    disabled
+                />
                 <button
                     className='button'
                     onClick={() => {
