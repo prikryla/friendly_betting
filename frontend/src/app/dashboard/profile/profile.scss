@@ -21,26 +21,6 @@
     @apply flex flex-row items-center gap-3 mt-8 cursor-pointer md:hover:border-b md:pb-1 md:px-1;
     color: #666666;
 }
-.inputContainer {
-    @apply mt-12;
-    color: #666666;
-    &.smallerMargin {
-        @apply mt-8;
-    }
-
-    .dataContainer {
-        @apply w-80 lg:w-96 h-16 border rounded-2xl text-base font-normal border-line indent-5 flex flex-row items-center;
-        background-color: #F7F7F8;
-    }
-
-    .button {
-        @apply -mt-1.5 -mr-52 underline lg:mr-[-260px]
-    }
-}
-
-label {
-    @apply flex flex-col gap-2;
-}
 
 .sportFact {
     @apply hidden md:block;

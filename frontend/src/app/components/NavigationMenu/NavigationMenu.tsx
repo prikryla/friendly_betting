@@ -1,9 +1,10 @@
 import React from 'react';
+// COMPONENTS
 import MenuItem from './MenuItem/MenuItem';
 import NavigationLogo from './Logo/NavigationLogo';
-
-import { signOut } from '../../../../auth';
-
+// UTILS
+import { handleLogout } from '@/app/lib/utils';
+// CSS
 import './NavigationMenu.scss';
 
 interface IMenuItems {
@@ -31,13 +32,8 @@ const NavigationMenu: React.FC = () => {
                         <MenuItem key={index} href={item.href} textToRender={item.textToRender} />
                     );
                 })}
-                <form
-                    // eslint-disable-next-line @typescript-eslint/no-misused-promises
-                    action={async () => {
-                        'use server';
-                        await signOut();
-                    }}
-                >
+                {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+                <form action={handleLogout}>
                     <button>
                         <p className='logoutButton'>Odhlásit se</p>
                     </button>

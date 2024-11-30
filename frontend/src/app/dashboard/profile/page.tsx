@@ -4,6 +4,7 @@ import { type Metadata } from 'next';
 import Image from 'next/image';
 import SportFact from '@/app/components/Profile/SportFacts/SportFact';
 import WorkInProgress from '@/app/components/WorkInProgress/WorkInProgress';
+import ProfileDataContainer from '@/app/components/Profile/ProfileDataContainer/ProfileDataContainer';
 // UTILS
 import { getRandomNumber } from '@/app/lib/helpers/helpers';
 import { colorsArr } from './colorLib';
@@ -64,27 +65,27 @@ const MyProfile: React.FC = () => {
                             />
                             <p>Změnit profilovou fotografii</p>
                         </div>
-                        <div className='inputContainer'>
-                            <label htmlFor='email'>
-                                E-mail
-                                <div className='dataContainer'>{data.email}</div>
-                                <button className='button'>Změnit e-mail</button>
-                            </label>
-                        </div>
-                        <div className='inputContainer smallerMargin'>
-                            <label htmlFor='username'>
-                                Tvoje jméno
-                                <div className='dataContainer'>{data.username}</div>
-                                <button className='button'>Změnit jméno</button>
-                            </label>
-                        </div>
-                        <div className='inputContainer smallerMargin'>
-                            <label htmlFor='password'>
-                                Heslo
-                                <div className='dataContainer'>{data.password}</div>
-                                <button className='button'>Změnit heslo</button>
-                            </label>
-                        </div>
+                        <ProfileDataContainer
+                            label='email'
+                            renderText='E-mail'
+                            buttonText='Změnit e-mail'
+                            data={data.email}
+                        />
+                        <ProfileDataContainer
+                            label='username'
+                            renderText='Uživatelské jméno'
+                            buttonText='Změnit jméno'
+                            data={data.username}
+                            smallerMargin
+                        />
+                        <ProfileDataContainer
+                            label='password'
+                            renderText='Heslo'
+                            buttonText='Změnit heslo'
+                            data={data.password}
+                            smallerMargin
+                            isPassword
+                        />
                     </div>
                 </div>
                 <div className='sportFact'>
