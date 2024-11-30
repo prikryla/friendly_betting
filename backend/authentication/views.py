@@ -3,6 +3,9 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.middleware.csrf import get_token
+from .models import User
+from django.conf import settings
+from rest_framework.parsers import MultiPartParser, FormParser
 
 # ---------------------------------
 # TODO: Finish this register method 
@@ -53,3 +56,29 @@ def get_csrf_token(request):
     csrf_token = get_token(request)
     return JsonResponse({'csrfToken': csrf_token})
 
+@api_view(['POST'])
+def update_user(request):
+    # Ensure the user is authenticated
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "User not authenticated"}, status=401)
+
+    # Retrieve the authenticated user
+    try:
+        user = User.objects.get(id=request.user.id)
+    except User.DoesNotExist:
+        return JsonResponse({"error": "User not found"}, status=404)
+
+    # Update user fields if provided in the request data
+    if 'username' in request.data:
+        user.username = request.data['username']
+    if 'email' in request.data:
+        user.email = request.data['email']
+
+    # Save changes to the database
+    user.save()
+    
+    return JsonResponse({
+        "message": "User profile updated successfully",
+        "username": user.username,
+        "email": user.email
+    }, status=200)
